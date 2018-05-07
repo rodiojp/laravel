@@ -38,16 +38,28 @@ class ClientController extends Controller
         $obj->last_name = 'doe';
         $obj->email = 'jane@another-domain.com';
         $data['clients'][]=$obj;
-        
         return view('client.index',$data);
     }
 
-    public function newClient()
+    public function newClient( Request $request)
     {
         $data = [];
+        $data['title'] = $request->input('title');
+        $data['name'] = $request->input('name');
+        $data['lastName'] = $request->input('lastName');
+        $data['address'] = $request->input('address');
+        $data['zipCode'] = $request->input('zipCode');
+        $data['city'] = $request->input('city');
+        $data['state'] = $request->input('state');
+        $data['email'] = $request->input('email');
+
         $data['titles'] = $this->titles;
-        // return __METHOD__;
-        return view('client.newClient', $data);
+        $data['modify'] = 0;
+
+        if ($request->isMethod('post')){
+            dd($data);
+        }
+        return view('client.form', $data);
     }
 
     public function create()
@@ -58,9 +70,12 @@ class ClientController extends Controller
 
     public function show($client_id)
     {
-        return __METHOD__ . ':' . $client_id;
-        // return view('create');
+        $data = [];
+        $data['titles'] = $this->titles;
+        $data['modify'] = 1;
+        return view('client.form', $data);
     }
+
     public function modify($client_id)
     {
         return __METHOD__ . ':' . $client_id;
