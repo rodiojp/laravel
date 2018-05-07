@@ -12,6 +12,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 

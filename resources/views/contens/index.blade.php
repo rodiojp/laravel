@@ -1,6 +1,6 @@
 @extends('layout') @section('title', 'Home Page') @section('content')
 <div class="row">
-    <h4 id="home">Landon Hotel App</h4>
+    <h4 id="home">Landon Hotel App {{ $version }}</h4>
 </div>
 <div class="row">
     <div class="col-4 col-md-6 col-lg-7">

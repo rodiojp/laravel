@@ -18,10 +18,10 @@ Route::get('/clients', 'ClientController@index')->name('clients');
 Route::get('/clients/index', 'ClientController@index')->name('reservations');  
 Route::get('/clients/new', 'ClientController@newClient')->name('newClient');    
 Route::post('/clients/new', 'ClientController@create');  
-Route::get('/clients/{client_id}', 'ClientController@show');  
-Route::post('/clients/{client_id}', 'ClientController@modify');  
+Route::get('/clients/{client_id}', 'ClientController@show')->name('showClient');  
+Route::post('/clients/{client_id}', 'ClientController@modify')->name('editClient');  
 
-Route::get('/rooms/{client_id}', 'RoomsController@checkAvailableRooms');  
+Route::get('/rooms/{client_id}', 'RoomsController@checkAvailableRooms')->name('checkRooms');  
 Route::post('/rooms/{client_id}', 'RoomsController@checkAvailableRooms');  
 
 Route::post('/book/room/{client_id}/{room_id}/{date_id}/{date_out}', 'ReservationsController@bookRoom');  

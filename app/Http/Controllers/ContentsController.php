@@ -9,8 +9,9 @@ class ContentsController extends Controller
     //
     public function home()
     {
-        // return __METHOD__;
-        return view('contens.index');
+        $data = [];
+        $data['version'] = '0.1.2';
+        return view('contens.index', $data);
     }
 
 }
