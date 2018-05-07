@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Title as Title;
 
 class ClientController extends Controller
 {
+    public function __construct(Title $titles)
+    {
+        $this->titles = $titles->all();
+    }
+
+    public function di()
+    {
+        dd($this->titles);
+    }
+
     //
     public function index()
     {
@@ -33,8 +44,10 @@ class ClientController extends Controller
 
     public function newClient()
     {
-        return __METHOD__;
-        // return view('newClient');
+        $data = [];
+        $data['titles'] = $this->titles;
+        // return __METHOD__;
+        return view('client.newClient', $data);
     }
 
     public function create()
