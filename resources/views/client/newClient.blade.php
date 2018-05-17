@@ -15,7 +15,7 @@
         </div>
         <div class="form-group col-md-5">
             <label id="lblName" for="form[name]">Name</label>
-            <input class="form-control" id="name" name="form[name]" type="text">
+            <input class="form-control" id="name" name="form[name]" type="text" value="{{ old('names')}}">
         </div>
         <div class="form-group col-md-5">
             <label id="lblLastName" for="form[lastName]">Last Name</label>
