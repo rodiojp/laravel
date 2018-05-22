@@ -18,7 +18,7 @@
         <tbody>
             @foreach($clients as $client)
             <tr>
-                <td>{{ $client->title }} {{ $client->name }}</td>
+                <td>{{ $client->title }} {{ $client->name }} {{ $client->last_name }}</td>
                 <td>{{ $client->email }} </td>
                 <td>
                     <a class="btn" href="{{ route('showClient', ['client_id' => $client->id]) }}">EDIT</a>
