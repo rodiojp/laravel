@@ -1,0 +1,1 @@
+SELECT clients.id, FROM clients WHERE clients.id = 1;

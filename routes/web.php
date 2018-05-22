@@ -21,10 +21,10 @@ Route::post('/clients/new', 'ClientController@newClient')->name('createClient');
 Route::get('/clients/{client_id}', 'ClientController@show')->name('showClient');  
 Route::post('/clients/{client_id}', 'ClientController@modify')->name('updateClient');  
 
-Route::get('/rooms/{client_id}', 'RoomsController@checkAvailableRooms')->name('checkRooms');  
-Route::post('/rooms/{client_id}', 'RoomsController@checkAvailableRooms');  
+Route::get('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
+Route::post('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
 
-Route::post('/book/room/{client_id}/{room_id}/{date_id}/{date_out}', 'ReservationsController@bookRoom');  
+Route::get('/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'ReservationsController@bookRoom')->name('book_room');
 
 // Route::get('/', function (){
 //     $response_arr = ['author' => 'BP', 'version' => '0.1.1'];

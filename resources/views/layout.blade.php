@@ -13,6 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -53,8 +54,12 @@
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- proper order: manifest.js, vendor.js, app.js' -->
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Optional JavaScript -->
+    @yield('optional_js')
 </body>
 
 </html>

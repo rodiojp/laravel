@@ -10,7 +10,7 @@
     <table class="table mt-3">
         <thead>
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Room</th>
                 <th scope="col">Email</th>
                 <th scope="col">Action</th>
             </tr>
@@ -22,7 +22,7 @@
                 <td>{{ $client->email }} </td>
                 <td>
                     <a class="btn" href="{{ route('showClient', ['client_id' => $client->id]) }}">EDIT</a>
-                    <a class="btn btn-warning" href="{{ route('checkRooms', ['client_id' => $client->id]) }}">BOOK A ROOM</a>
+                    <a class="btn btn-warning" href="{{ route('check_room', ['client_id' => $client->id]) }}">BOOK A ROOM</a>
                 </td>
             </tr>
             @endforeach

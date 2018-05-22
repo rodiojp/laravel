@@ -1,2 +1,12 @@
 {
+    "database.connections": [
+        {
+            "type": "mysql",
+            "name": "192.168.10.10 (mysql)",
+            "host": "192.168.10.10:3306",
+            "user": "homestead",
+            "password": "secret",
+            "database": "landon_app"
+        }
+    ]
 }

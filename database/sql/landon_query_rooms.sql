@@ -1,0 +1,1 @@
+SELECT rooms.id, rooms.name, rooms.floor FROM rooms;
