@@ -100,7 +100,7 @@ class ClientController extends Controller
         // return view('create');
     }
 
-    public function show($client_id)
+    public function show($client_id, Request $request)
     {
         $data = [];
         $data['client_id'] = $client_id;
@@ -117,6 +117,9 @@ class ClientController extends Controller
         $data['city'] = $clientTable->city;
         $data['state'] = $clientTable->state;
         $data['email'] = $clientTable->email;
+
+        $request->session()->put('last_updated', $clientTable->name .' ' .
+            $clientTable->last_name);
 
         return view('client.form', $data);
     }
