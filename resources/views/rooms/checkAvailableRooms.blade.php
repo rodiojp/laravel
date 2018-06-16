@@ -7,6 +7,7 @@
 @section('content')
 
 <form class="was-validated" action="" method="post">
+        {{ csrf_field() }}
     <div class="form-row">
         <div class="form-group col-md-4">
             <label id="lblBookingFor" for="bookinFor">Bookin For:</label>

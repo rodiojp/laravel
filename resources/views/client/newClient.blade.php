@@ -4,6 +4,7 @@
 </div>
 
 <form action="/clients/new" method="post">
+    {{ csrf_field() }}
     <div class="form-row">
         <div class="form-group col-md-2">
             <label id="lblTitle" for="form[title]">Title</label>

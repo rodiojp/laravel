@@ -12,6 +12,7 @@
 
 <form id="formContent" class="was-validated" action=" {{ $modify == 1 ? route('updateClient', [ 'client_id' => $client_id ] ): route('createClient') }}"
     method="post">
+    {{ csrf_field() }}
     <div class="form-row">
         <div class="form-group col-md-2">
             <label id="lblTitle" for="title">Title</label>
