@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>LHA - @yield('title')</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}" />
+    {{-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> --}}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
@@ -20,7 +21,7 @@
 <body>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Landon App</a>
+        <a class="navbar-brand" href="/">Landon App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

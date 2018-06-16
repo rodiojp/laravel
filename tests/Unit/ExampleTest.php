@@ -17,12 +17,16 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
-    /*
+   
+    public function testFirstTest()
+    {
+        $value = 1;
+        $this->assertTrue( $value === 1, 'Value should be 1');
+    }
+
     public function testTitlesModelCount()
     {
         $titles= new Title();
-        // $value = 1;
-        // $this->assertTrue( $value === 1, 'Value should be 1');
         $this->assertTrue( count($titles->all()) === 6, 'It should have 6 titles');
     }
 
@@ -30,9 +34,6 @@ class ExampleTest extends TestCase
     {
         $titles= new Title();
         $titles_array = $titles->all();
-        // $value = 1;
-        // $this->assertTrue( $value === 1, 'Value should be 1');
         $this->assertEquals("Professor", array_pop($titles_array) , "Titles: last element should be 'Professor'");
     }
-    */
 }

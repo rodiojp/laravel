@@ -1,9 +1,16 @@
-@extends('layout') @section('title', 'Client/New Client') @section('content')
+@extends('layout') 
+@section('title', 'Client/New Client') 
+@section('optional_js')
+<script src="{{ asset('/js/clients.js') }}"></script>
+@endsection
+
+@section('content')
+
 <div class="row">
     <h4>{{ $modify == 1 ? 'Modify Client ': 'New Client' }}</h4>
 </div>
 
-<form class="was-validated" action=" {{ $modify == 1 ? route('updateClient', [ 'client_id' => $client_id ] ): route('createClient') }}"
+<form id="formContent" class="was-validated" action=" {{ $modify == 1 ? route('updateClient', [ 'client_id' => $client_id ] ): route('createClient') }}"
     method="post">
     <div class="form-row">
         <div class="form-group col-md-2">
@@ -28,13 +35,13 @@
     </div>
     <div class="form-group">
         <label id="lblAddress" for="address">Address</label>
-        <input class="form-control"  id="address" name="address" type="text"  value="{{ old('address') ? old('address') : $address }}">
+        <input class="form-control" id="address" name="address" type="text" value="{{ old('address') ? old('address') : $address }}">
         <small class="text-danger">{{$errors->first('address')}}</small>
     </div>
     <div class="form-row">
         <div class="form-group col-md-3">
             <label id="lblZipCode" for="zipCode">Zip</label>
-            <input class="form-control" id="zipCode" name="zipCode" type="text"  value="{{ old('zipCode') ? old('zipCode') : $zipCode }}">
+            <input class="form-control" id="zipCode" name="zipCode" type="text" value="{{ old('zipCode') ? old('zipCode') : $zipCode }}">
             <small class="text-danger">{{$errors->first('zipCode')}}</small>
         </div>
         <div class="form-group col-md-5">
@@ -54,8 +61,7 @@
         <small class="text-danger">{{$errors->first('email')}}</small>
     </div>
     <div>
-        <input value="SAVE" class="btn btn-success" type="submit">
+        <input id="btnSave" value="SAVE" class="btn btn-success" name="submit">
     </div>
 </form>
-
 @endsection
