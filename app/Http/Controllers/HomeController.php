@@ -3,32 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Title as Title;
 
 class HomeController extends Controller
 {
-    public function __construct(Title $titles)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $this->titles = $titles->all();
+        $this->middleware('auth');
     }
 
-    public function di()
-    {
-        dd($this->titles);
-    }
-
-    // php artisan make:controller HomeController
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        // return views
-        // return redirects
-        return view('home.index');
-    }
-
-    public function about()
-    {
-        // return views
-        // return redirects
-        return view('home.about');
+        return view('home');
     }
 }

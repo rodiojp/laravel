@@ -87,3 +87,6 @@ Route::get('contact', [ 'as' => 'contact.form', function () {
 //     // return redirect()->route('contact.form')->withErrors($validation->errors());
 //     return redirect()->route('contact.form')->withErrors($validation->errors())->withInput();
 // }]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
