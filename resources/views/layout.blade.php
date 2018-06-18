@@ -40,6 +40,20 @@
                     <a class="nav-link" class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
+            {{-- @if (session('status')) --}}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                           Logout
+                                       </a>
+                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                           {{ csrf_field() }}
+                                       </form>
+                </li>
+            </ul>
+            {{-- @endif --}}
         </div>
     </nav>
     <!-- End Top Bar -->

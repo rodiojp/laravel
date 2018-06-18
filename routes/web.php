@@ -12,19 +12,23 @@
 |
 */
 
-Route::get('/', 'ContentsController@home')->name('home');;  
+// Route::get('/clients', 'ClientController@index')->name('clients')->middleware('auth');  
 
-Route::get('/clients', 'ClientController@index')->name('clients');  
-Route::get('/clients/index', 'ClientController@index')->name('reservations');  
-Route::get('/clients/new', 'ClientController@newClient')->name('newClient');    
-Route::post('/clients/new', 'ClientController@newClient')->name('createClient');  
-Route::get('/clients/{client_id}', 'ClientController@show')->name('showClient');  
-Route::post('/clients/{client_id}', 'ClientController@modify')->name('updateClient');  
+Route::middleware('auth')->group(function(){
+    Route::get('/', 'ContentsController@home')->name('home');;  
 
-Route::get('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
-Route::post('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
-
-Route::get('/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'ReservationsController@bookRoom')->name('book_room');
+    Route::get('/clients', 'ClientController@index')->name('clients');
+    Route::get('/clients/index', 'ClientController@index')->name('reservations');  
+    Route::get('/clients/new', 'ClientController@newClient')->name('newClient');    
+    Route::post('/clients/new', 'ClientController@newClient')->name('createClient');  
+    Route::get('/clients/{client_id}', 'ClientController@show')->name('showClient');  
+    Route::post('/clients/{client_id}', 'ClientController@modify')->name('updateClient');  
+    
+    Route::get('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
+    Route::post('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
+    
+    Route::get('/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'ReservationsController@bookRoom')->name('book_room');
+});
 
 // Route::get('/', function (){
 //     $response_arr = ['author' => 'BP', 'version' => '0.1.1'];
