@@ -179,4 +179,12 @@ class ClientController extends Controller
 
         return view('client.form', $data);
     }
+
+    public function export()
+    {
+        $data = [];
+        header('content-disposition: attachment; filename=export.xls');
+        $data['clients']=$this->client->all();
+        return view('client.export',$data);
+    }
 }

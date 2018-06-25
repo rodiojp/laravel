@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/clients/index', 'ClientController@index')->name('reservations');  
     Route::get('/clients/new', 'ClientController@newClient')->name('newClient');    
     Route::post('/clients/new', 'ClientController@newClient')->name('createClient');  
+    Route::get('/clients/export', 'ClientController@export')->name('exportClients'); 
     Route::get('/clients/{client_id}', 'ClientController@show')->name('showClient');  
     Route::post('/clients/{client_id}', 'ClientController@modify')->name('updateClient');  
     
